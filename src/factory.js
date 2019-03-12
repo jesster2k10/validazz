@@ -1,3 +1,4 @@
+// @flow
 import type { ValidationRule } from './types'
 import * as _ from './helpers'
 
