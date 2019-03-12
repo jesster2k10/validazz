@@ -19,9 +19,33 @@ Yarn:
 ## Usage
 
 ```js
-import myModule from "validazz";
+import Validator, { rules } from 'validazz'
 
-myModule();
+const mySuperCoolValidator = Validator.factory()
+
+// Let's add some rules
+mySuperCoolValidator.addRule(rules.isRequired)
+mySuperCoolValidator.addRules([rules.minLength(2), rules.maxLength(8)])
+mySuperCoolValidator.addRule(rules.isString)
+
+// How about a custom rule?
+const customRule = {
+  runWithValue: value => {
+    if (value !== '🤪') return false
+    return true
+  },
+  message: 'Houston, we got a problem',
+}
+mySuperCoolValidator.addRule(customRule)
+
+// Okay let's start validating
+const { success, failed } = mySuperCoolValidator.runWithValue('hello')
+if (success) {
+  console.log('Wow, this was validated just like that')
+} else {
+  const { message } = failed
+  console.log(`Okay so here's the error message: ${failed}`)
+}
 ```
 
 ## API
@@ -30,7 +54,7 @@ myModule();
 
 #### Table of Contents
 
--   [sayHello](#sayhello)
+- [sayHello](#sayhello)
 
 ### sayHello
 
@@ -38,7 +62,7 @@ This function says hello.
 
 **Parameters**
 
--   `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Some name to say hello for.
+- `name` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Some name to say hello for.
 
 Returns **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The hello.
 

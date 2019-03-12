@@ -1,10 +1,5 @@
-// @flow
+import Validator from './factory'
 
-/**
- * This function says hello.
- * @param name Some name to say hello for.
- * @returns The hello.
- */
-const sayHello = (name: string = "Haz"): string => `Hello, ${name}!`;
-
-export default sayHello;
+export * as rules from './rules'
+export { default as Validator } from './factory'
+export default Validator
