@@ -14,5 +14,4 @@ module.exports = {
     '@babel/plugin-proposal-class-properties',
     '@babel/plugin-proposal-export-namespace-from',
   ],
-  parser: 'babel-eslint',
 }
