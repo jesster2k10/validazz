@@ -48,7 +48,7 @@ if (success) {
 }
 ```
 
-For a list of all the included rules, be sure to check the [RULES.md]() file
+For a list of all the included rules, be sure to check the [RULES.md](<>) file
 
 ## API
 
@@ -56,29 +56,29 @@ For a list of all the included rules, be sure to check the [RULES.md]() file
 
 #### Table of Contents
 
-- [Validator](#validator)
-  - [Parameters](#parameters)
-  - [addRule](#addrule)
-    - [Parameters](#parameters-1)
-  - [addRules](#addrules)
-    - [Parameters](#parameters-2)
-  - [runWithValue](#runwithvalue)
-    - [Parameters](#parameters-3)
-  - [validate](#validate)
-    - [Parameters](#parameters-4)
-    - [Examples](#examples)
-  - [factory](#factory)
-    - [Parameters](#parameters-5)
-    - [Examples](#examples-1)
-- [runWithValue](#runwithvalue-1)
-  - [Parameters](#parameters-6)
-  - [Examples](#examples-2)
-- [ValidationRule](#validationrule)
-  - [Properties](#properties)
-  - [Examples](#examples-3)
-- [ValidatorResult](#validatorresult)
-  - [Properties](#properties-1)
-  - [Examples](#examples-4)
+-   [Validator](#validator)
+    -   [Parameters](#parameters)
+    -   [addRule](#addrule)
+        -   [Parameters](#parameters-1)
+    -   [addRules](#addrules)
+        -   [Parameters](#parameters-2)
+    -   [runWithValue](#runwithvalue)
+        -   [Parameters](#parameters-3)
+    -   [validate](#validate)
+        -   [Parameters](#parameters-4)
+        -   [Examples](#examples)
+    -   [factory](#factory)
+        -   [Parameters](#parameters-5)
+        -   [Examples](#examples-1)
+-   [runWithValue](#runwithvalue-1)
+    -   [Parameters](#parameters-6)
+    -   [Examples](#examples-2)
+-   [ValidationRule](#validationrule)
+    -   [Properties](#properties)
+    -   [Examples](#examples-3)
+-   [ValidatorResult](#validatorresult)
+    -   [Properties](#properties-1)
+    -   [Examples](#examples-4)
 
 ### Validator
 
@@ -88,7 +88,7 @@ Type: [Validator](#validator)
 
 #### Parameters
 
-- `rules` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ValidationRule](#validationrule)>** List of rules to initalize with (optional, default `[]`)
+-   `rules` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ValidationRule](#validationrule)>** List of rules to initalize with (optional, default `[]`)
 
 #### addRule
 
@@ -96,7 +96,7 @@ Add a rule to the factory
 
 ##### Parameters
 
-- `rule` **[ValidationRule](#validationrule)** A validation rule
+-   `rule` **[ValidationRule](#validationrule)** A validation rule
 
 Returns **[Validator](#validator)** Validator instance
 
@@ -106,25 +106,26 @@ Add a rules to the factory
 
 ##### Parameters
 
-- `rules` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ValidationRule](#validationrule)>** An array of rules to add
+-   `rules` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ValidationRule](#validationrule)>** An array of rules to add
 
 Returns **[Validator](#validator)** Validator instance
 
 #### runWithValue
 
-- **See: validate**
+-   **See: validate**
 
 Run the factory and validate!
 
 ##### Parameters
 
-- `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The string to be validated
+-   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The string to be validated
 
 Returns **[ValidatorResult](#validatorresult)** The validation outcome
 
 **Meta**
 
-- **deprecated**: Use `validate(value: string)` instead. Depricated since v1.1
+-   **deprecated**: Use `validate(value: string)` instead. Depricated since v1.1
+
 
 #### validate
 
@@ -132,14 +133,12 @@ Validates a string
 
 ##### Parameters
 
-- `value` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The string to be validated
+-   `value` **[String](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** The string to be validated
 
 ##### Examples
 
 ```javascript
-const { success, failed } = Validator.factory(rules.isRequired).validate(
-  'hello'
-)
+const { success, failed } = Validator.factory(rules.isRequired).validate('hello')
 ```
 
 Returns **[ValidatorResult](#validatorresult)** The validation outcome
@@ -150,7 +149,7 @@ Create a new validation factory
 
 ##### Parameters
 
-- `rules` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ValidationRule](#validationrule)>** List of rules to initalize the factory with (optional, default `[]`)
+-   `rules` **[Array](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Array)&lt;[ValidationRule](#validationrule)>** List of rules to initalize the factory with (optional, default `[]`)
 
 ##### Examples
 
@@ -168,16 +167,16 @@ Type: [Function](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Sta
 
 #### Parameters
 
-- `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Value of array element
+-   `value` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** Value of array element
 
 #### Examples
 
 ```javascript
 const rule = {
-  runWithValue(value) {
-    return value != null
-  },
-}
+   runWithValue(value) {
+     return value != null
+   }
+ }
 ```
 
 Returns **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** If it returns true, the field is valid.
@@ -190,28 +189,28 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 #### Properties
 
-- `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** A custom error message for this validation rule
-- `runWithValue` **[runWithValue](#runwithvalue)** Validation callback
+-   `message` **[string](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/String)** A custom error message for this validation rule
+-   `runWithValue` **[runWithValue](#runwithvalue)** Validation callback
 
 #### Examples
 
 ```javascript
 // Basic Example
-const validationRule = {
-  message: 'This field is required',
-  runWithValue(value) {
-    return value != null
-  },
-}
+ const validationRule = {
+   message: 'This field is required',
+   runWithValue(value) {
+     return value != null
+   }
+ }
 
-// Example with parameters
-const minimum = min => ({
-  message: `Amount must be greater than ${min}`,
-  runWithValue(value) {
-    const value = Number(value)
-    return value > min
-  },
-})
+ // Example with parameters
+ const minimum = (min) => ({
+   message: `Amount must be greater than ${min}`,
+   runWithValue(value) {
+     const value = Number(value)
+     return value > min
+   }
+ })
 ```
 
 ### ValidatorResult
@@ -222,21 +221,19 @@ Type: [Object](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Globa
 
 #### Properties
 
-- `success` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The outcome of the validation
-- `failed` **[ValidationRule](#validationrule)** An optional value. Returns the rule that failed to validate
+-   `success` **[Boolean](https://developer.mozilla.org/docs/Web/JavaScript/Reference/Global_Objects/Boolean)** The outcome of the validation
+-   `failed` **[ValidationRule](#validationrule)** An optional value. Returns the rule that failed to validate
 
 #### Examples
 
 ```javascript
-const { success, failed } = Validator.factory(rules.isRequired).validate(
-  'hello'
-)
-if (success) {
-  alert('validated')
-} else {
-  const { message } = failed
-  alert(`Failed: ${message}`)
-}
+const { success, failed } = Validator.factory(rules.isRequired).validate('hello')
+ if (success) {
+   alert('validated')
+ } else {
+   const { message } = failed
+   alert(`Failed: ${message}`)
+ }
 ```
 
 ## License
