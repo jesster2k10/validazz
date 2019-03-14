@@ -16,7 +16,7 @@ class Validator {
    *  const validator = new Validator()
    */
 
-  constructor(rules: ?(ValidationRule[]) = []) {
+  constructor(rules: ValidationRule[] = []) {
     this.rules = rules
   }
 
@@ -32,7 +32,7 @@ class Validator {
    *  const validator = Validator.factory([])
    */
 
-  static factory(rules: ?(ValidationRule[]) = []) {
+  static factory(rules: ValidationRule[] = []) {
     return new Validator(rules)
   }
 
@@ -53,8 +53,8 @@ class Validator {
    * @param {ValidationRule[]} rules An array of rules to add
    * @returns {Validator} - Validator instance
    */
-  addRules(rules: ?(ValidationRule[])) {
-    this.rules = [...this.rules, ...rules]
+  addRules(rules: ValidationRule[]) {
+    this.rules = this.rules.concat(rules)
     return this
   }
 
@@ -68,7 +68,7 @@ class Validator {
    */
 
   runWithValue(value: string): ValidatorResult {
-    this.validate(value)
+    return this.validate(value)
   }
 
   /**

@@ -3,9 +3,9 @@ import * as _ from '../helpers'
 import type { ValidationRule } from '../types'
 
 export const isRequired: ValidationRule = {
-  runWithValue: (value: any = null) => {
+  runWithValue: (value: string) => {
     if (typeof value === 'string') return _.hasText(value)
-    return value !== null || value != undefined
+    return value !== null || value !== undefined
   },
   message: 'This field is required',
 }

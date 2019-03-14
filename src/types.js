@@ -38,7 +38,7 @@
  *  })
  */
 type ValidationRule = {
-  runWithValue: (value: string | number) => boolean,
+  runWithValue: (value: string) => boolean,
   message?: string,
 }
 
