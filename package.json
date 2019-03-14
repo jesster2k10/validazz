@@ -1,6 +1,6 @@
 {
   "name": "validazz",
-  "version": "0.0.1",
+  "version": "1.1",
   "description": "Magical, Flexible and Extendible Javascript Validation",
   "license": "MIT",
   "repository": "https://github.com/jesster2k10/validazz",
@@ -16,7 +16,7 @@
   ],
   "scripts": {
     "test": "jest",
-    "coverage": "npm test -- --coverage",
+    "coverage": "yarn test -- --coverage",
     "postcoverage": "opn coverage/lcov-report/index.html",
     "lint": "eslint .",
     "flow": "flow check",
@@ -24,9 +24,9 @@
     "postdocs": "git add README.md",
     "clean": "rimraf dist",
     "flowbuild": "flow-copy-source src dist",
-    "prebuild": "npm run docs && npm run clean && npm run flowbuild",
+    "prebuild": "yarn run docs && yarn run clean && yarn run flowbuild",
     "build": "babel src -d dist",
-    "preversion": "npm run lint && npm test && npm run build",
+    "preversion": "yarn run lint && yarn test && yarn run build",
     "version": "standard-changelog && git add CHANGELOG.md",
     "postpublish": "git push origin master --follow-tags"
   },
@@ -48,10 +48,13 @@
     "@babel/cli": "7.2.3",
     "@babel/core": "7.3.4",
     "@babel/plugin-proposal-class-properties": "7.3.4",
+    "@babel/plugin-proposal-export-namespace-from": "7.2.0",
     "@babel/preset-env": "7.3.4",
     "@babel/preset-flow": "7.0.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.1.0",
+    "browserslist": "4.4.2",
+    "caniuse-lite": "1.0.30000947",
     "documentation": "9.3.0",
     "eslint": "5.15.1",
     "eslint-config-airbnb-base": "13.1.0",
@@ -69,5 +72,9 @@
     "prettier": "1.16.4",
     "rimraf": "2.6.3",
     "standard-changelog": "2.0.7"
+  },
+  "resolutions": {
+    "browserslist": "4.4.1",
+    "caniuse-lite": "1.0.30000932"
   }
 }
