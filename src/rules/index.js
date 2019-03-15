@@ -4,6 +4,7 @@ import type { ValidationRule } from '../types'
 
 export const isRequired: ValidationRule = {
   runWithValue: (value: string) => {
+    if (value === null || value === undefined) return false
     if (typeof value === 'string') return _.hasText(value)
     return value !== null || value !== undefined
   },

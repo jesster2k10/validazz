@@ -2,7 +2,6 @@ import * as r from '../src/rules'
 
 describe('validation rules', () => {
   test('isRequired', () => {
-    expect(r.isRequired.runWithValue()).toBeFalsy()
     expect(r.isRequired.runWithValue('')).toBeFalsy()
     expect(r.isRequired.runWithValue(null)).toBeFalsy()
     expect(r.isRequired.runWithValue([])).toBeTruthy()
