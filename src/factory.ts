@@ -1,4 +1,4 @@
-import * as _ from './helpers'
+import * as _ from './helpers/index'
 import { ValidatorResult, ValidationRule } from './types'
 
 /**
@@ -80,7 +80,7 @@ class Validator {
 
   public validate(value: string): ValidatorResult {
     const failedToRuns = this.rules.filter(
-      (rule: ValidationRule): boolean => !rule.runWithValue(value),
+      (rule: ValidationRule): boolean => !rule.runWithValue(value)
     )
     if (_.isEmptyArray(failedToRuns)) {
       return { success: true }

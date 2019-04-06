@@ -1,5 +1,4 @@
-// @flow
-import * as _ from '../helpers'
+import * as _ from '../helpers/index'
 import { ValidationRule } from '../types'
 
 export const isRequired: ValidationRule = {

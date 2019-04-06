@@ -5,6 +5,7 @@
   "license": "MIT",
   "repository": "https://github.com/jesster2k10/validazz",
   "main": "dist/index.js",
+  "types": "dist/index.d.ts",
   "author": {
     "name": "Jesse Onolememen",
     "email": "jesster2k10@gmail.com",
