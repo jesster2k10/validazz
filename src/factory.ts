@@ -1,6 +1,5 @@
-// @flow
-import type { ValidationRule, ValidatorResult } from './types'
 import * as _ from './helpers'
+import { ValidatorResult, ValidationRule } from './types'
 
 /**
  * Validation Factory, where all the validation magic happens
@@ -16,11 +15,11 @@ class Validator {
    *  const validator = new Validator()
    */
 
-  constructor(rules: ValidationRule[] = []) {
+  public constructor(rules: ValidationRule[] = []) {
     this.rules = rules
   }
 
-  rules: ValidationRule[] = []
+  public rules: ValidationRule[] = []
 
   /**
    * Create a new validation factory
@@ -32,7 +31,7 @@ class Validator {
    *  const validator = Validator.factory([])
    */
 
-  static factory(rules: ValidationRule[] = []) {
+  public static factory(rules: ValidationRule[] = []): Validator {
     return new Validator(rules)
   }
 
@@ -42,7 +41,7 @@ class Validator {
    * @param {ValidationRule} rule A validation rule
    * @returns {Validator} - Validator instance
    */
-  addRule(rule: ValidationRule) {
+  public addRule(rule: ValidationRule): Validator {
     this.rules = [...this.rules, rule]
     return this
   }
@@ -53,7 +52,7 @@ class Validator {
    * @param {ValidationRule[]} rules An array of rules to add
    * @returns {Validator} - Validator instance
    */
-  addRules(rules: ValidationRule[]) {
+  public addRules(rules: ValidationRule[]): Validator {
     this.rules = this.rules.concat(rules)
     return this
   }
@@ -67,7 +66,7 @@ class Validator {
    * @returns {ValidatorResult} - The validation outcome
    */
 
-  runWithValue(value: string): ValidatorResult {
+  public runWithValue(value: string): ValidatorResult {
     return this.validate(value)
   }
 
@@ -79,9 +78,9 @@ class Validator {
    * const { success, failed } = Validator.factory(rules.isRequired).validate('hello')
    */
 
-  validate(value: string): ValidatorResult {
+  public validate(value: string): ValidatorResult {
     const failedToRuns = this.rules.filter(
-      (rule: ValidationRule) => !rule.runWithValue(value)
+      (rule: ValidationRule): boolean => !rule.runWithValue(value),
     )
     if (_.isEmptyArray(failedToRuns)) {
       return { success: true }

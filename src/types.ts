@@ -1,8 +1,6 @@
-// @flow
-
 /**
  * @callback runWithValue
- * @description The validation function for this rule. It takes the a string/integer value and returns a boolean.
+ * @description The validation function for this rule. It takes the a string/integer value
  * @param {string} value - Value of array element
  * @returns {Boolean} - If it returns true, the field is valid.
  * @example
@@ -37,9 +35,9 @@
  *    }
  *  })
  */
-type ValidationRule = {
-  runWithValue: (value: string) => boolean,
-  message?: string,
+export interface ValidationRule {
+  runWithValue: (value: string) => boolean;
+  message?: string;
 }
 
 /**
@@ -59,10 +57,7 @@ type ValidationRule = {
  *
  *
  */
-type ValidatorResult = {
-  success: boolean,
-  failed?: ValidationRule,
+export interface ValidatorResult {
+  success: boolean;
+  failed?: ValidationRule;
 }
-
-export type { ValidationRule }
-export type { ValidatorResult }

@@ -1,3 +1,7 @@
 [ignore]
 .*/dist
 .*/coverage
+src/typings/*
+
+[options]
+all=false

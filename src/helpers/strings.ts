@@ -1,5 +1,5 @@
 // eslint-disable-next-line import/prefer-default-export
-export function hasText(text) {
+export function hasText(text: string): boolean {
   if (typeof text !== 'string') {
     return false
   }

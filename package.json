@@ -24,8 +24,9 @@
     "postdocs": "git add README.md",
     "clean": "rimraf dist",
     "flowbuild": "flow-copy-source src dist",
-    "prebuild": "yarn run docs && yarn run clean && yarn run flowbuild",
-    "build": "babel src -d dist",
+    "tsc": "tsc",
+    "prebuild": "yarn run docs && yarn run clean",
+    "build": "tsc",
     "preversion": "yarn run lint && yarn test && yarn run build",
     "version": "standard-changelog && git add CHANGELOG.md",
     "postpublish": "git push origin master --follow-tags"
@@ -51,6 +52,9 @@
     "@babel/plugin-proposal-export-namespace-from": "7.2.0",
     "@babel/preset-env": "7.3.4",
     "@babel/preset-flow": "7.0.0",
+    "@types/react": "16.8.12",
+    "@typescript-eslint/eslint-plugin": "1.6.0",
+    "@typescript-eslint/parser": "1.6.0",
     "babel-eslint": "10.0.1",
     "babel-jest": "24.1.0",
     "browserslist": "4.4.2",
@@ -70,8 +74,10 @@
     "lint-staged": "8.1.5",
     "opn-cli": "4.0.0",
     "prettier": "1.16.4",
+    "react": "16.8.4",
     "rimraf": "2.6.3",
-    "standard-changelog": "2.0.7"
+    "standard-changelog": "2.0.7",
+    "typescript": "3.4.2"
   },
   "resolutions": {
     "browserslist": "4.4.1",
