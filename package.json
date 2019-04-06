@@ -1,6 +1,6 @@
 {
   "name": "validazz",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "description": "Magical, Flexible and Extendible Javascript Validation",
   "license": "MIT",
   "repository": "https://github.com/jesster2k10/validazz",
@@ -21,7 +21,7 @@
     "postcoverage": "opn coverage/lcov-report/index.html",
     "lint": "eslint .",
     "flow": "flow check",
-    "docs": "documentation readme src --section=API",
+    "docs": "echo 'docs'",
     "postdocs": "git add README.md",
     "clean": "rimraf dist",
     "flowbuild": "flow-copy-source src dist",

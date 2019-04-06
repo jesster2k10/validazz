@@ -60,4 +60,5 @@ export interface ValidationRule {
 export interface ValidatorResult {
   success: boolean;
   failed?: ValidationRule;
+  allFailed?: ValidationRule[];
 }

@@ -80,13 +80,13 @@ class Validator {
 
   public validate(value: string): ValidatorResult {
     const failedToRuns = this.rules.filter(
-      (rule: ValidationRule): boolean => !rule.runWithValue(value)
+      (rule: ValidationRule): boolean => !rule.runWithValue(value),
     )
     if (_.isEmptyArray(failedToRuns)) {
       return { success: true }
     }
-    const failed = _.first(failedToRuns)
-    return { success: false, failed }
+    const failed = failedToRuns[0]
+    return { success: false, failed, allFailed: failedToRuns }
   }
 }
 
