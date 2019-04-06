@@ -85,7 +85,7 @@ class Validator {
     if (_.isEmptyArray(failedToRuns)) {
       return { success: true }
     }
-    const failed = failedToRuns[0]
+    const failed = _.first(failedToRuns)
     return { success: false, failed, allFailed: failedToRuns }
   }
 }
